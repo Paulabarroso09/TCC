@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta - AirSmart</title>
+  <link rel="stylesheet" href="css/minha_conta.css">
+</head>
+<body>
+  <header class="header">
+    <h1>AirSmart</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="aparelhos.html">Aparelhos</a>
+      <a href="prevencoes.html">Prevenções</a>
+      <a href="historico.html">Histórico</a>
+    </nav>
+    
+    <a href="minha_conta.html"> <img class="imgPerfil" src="imgs/perfil.png" alt="Perfil"> </a>
+  </header>
+
+  <main>
+    <div class="profile-container">
+      <div class="profile-header">
+        <h2>Minha Conta</h2>
+        <p>Gerencie suas informações pessoais e preferências</p>
+      </div>
+
+      <div class="profile-content">
+        <!-- Seção de Informações Pessoais -->
+        <div class="profile-section">
+          <div class="section-header">
+            <h3>Informações Pessoais</h3>
+            <button class="edit-btn" onclick="toggleEdit('personalInfo')">Editar</button>
+          </div>
+          
+          <div class="info-grid">
+            <div class="info-item">
+              <label>Nome Completo</label>
+              <input type="text" id="nome" value="João Silva" readonly>
+            </div>
+            <div class="info-item">
+              <label>E-mail</label>
+              <input type="email" id="email" value="joao.silva@email.com" readonly>
+            </div>
+            <div class="info-item">
+              <label>Telefone</label>
+              <input type="tel" id="telefone" value="(11) 99999-9999" readonly>
+            </div>
+            <div class="info-item">
+              <label>Data de Nascimento</label>
+              <input type="date" id="nascimento" value="1990-01-01" readonly>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção de Endereço -->
+        <div class="profile-section">
+          <div class="section-header">
+            <h3>Endereço</h3>
+            <button class="edit-btn" onclick="toggleEdit('addressInfo')">Editar</button>
+          </div>
+          
+          <div class="info-grid">
+            <div class="info-item">
+              <label>CEP</label>
+              <input type="text" id="cep" value="01234-567" readonly>
+            </div>
+            <div class="info-item full-width">
+              <label>Endereço</label>
+              <input type="text" id="endereco" value="Rua das Flores, 123" readonly>
+            </div>
+            <div class="info-item">
+              <label>Cidade</label>
+              <input type="text" id="cidade" value="São Paulo" readonly>
+            </div>
+            <div class="info-item">
+              <label>Estado</label>
+              <input type="text" id="estado" value="SP" readonly>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção de Preferências -->
+        <div class="profile-section">
+          <div class="section-header">
+            <h3>Preferências</h3>
+            <button class="edit-btn" onclick="toggleEdit('preferences')">Editar</button>
+          </div>
+          
+          <div class="preferences-grid">
+            <div class="preference-item">
+              <label class="checkbox-label">
+                <input type="checkbox" id="notificacoes" checked>
+                <span class="checkmark"></span>
+                Receber notificações por e-mail
+              </label>
+            </div>
+            <div class="preference-item">
+              <label class="checkbox-label">
+                <input type="checkbox" id="alertas" checked>
+                <span class="checkmark"></span>
+                Alertas de qualidade do ar
+              </label>
+            </div>
+            <div class="preference-item">
+              <label class="checkbox-label">
+                <input type="checkbox" id="newsletter">
+                <span class="checkmark"></span>
+                Newsletter mensal
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção de Segurança -->
+        <div class="profile-section">
+          <div class="section-header">
+            <h3>Segurança</h3>
+          </div>
+          
+          <div class="security-actions">
+            <button class="action-btn" onclick="changePassword()">
+              <span class="icon">🔒</span>
+              Alterar Senha
+            </button>
+            <button class="action-btn" onclick="enable2FA()">
+              <span class="icon">🛡️</span>
+              Autenticação em 2 fatores
+            </button>
+          </div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="action-buttons">
+          <button class="btn-primary" onclick="saveChanges()">Salvar Alterações</button>
+          <button class="btn-secondary" onclick="cancelEdit()">Cancelar</button>
+          <button class="btn-logout" onclick="Auth.logout()">
+            <span class="icon">🚪</span>
+            Sair da Conta
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="sobre.html">Sobre a AirSmart</a>
+        <a href="contato.html">Contato</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="termos.html">Termos de Uso</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2023 AirSmart. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/minha_conta.js"></script>
+</body>
+</html>
