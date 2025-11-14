@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirSmart - Adicionar Aparelho</title>
+    <link rel="stylesheet" href="css/adicionar.css">
+</head>
+<body>
+    <header class="header">
+        <h1>AirSmart</h1>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="aparelhos.html">Aparelhos</a>
+        </nav>
+        <a href="minha_conta.html">
+            <img class="imgPerfil" src="imgs/perfil.png" alt="Minha Conta">
+        </a>
+    </header>
+
+    <div class="add-container">
+        <div class="add-card">
+            <h2>Adicionar Novo Aparelho</h2>
+            <form id="form-adicionar">
+                <div class="form-group">
+                    <label for="nome-aparelho">Nome do Aparelho</label>
+                    <input type="text" id="nome-aparelho" name="nome-aparelho" 
+                           class="form-input" placeholder="Ex: Sensor de Temperatura" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo-aparelho">Tipo</label>
+                    <select id="tipo-aparelho" name="tipo-aparelho" class="form-select" required>
+                        <option value="">Selecione...</option>
+                        <option value="quimica">Química</option>
+                        <option value="mecanica">Mecânica</option>
+                        <option value="laboratorio">Laboratório</option>
+                        <option value="oficina">Oficina</option>
+                        <option value="sala">Sala</option>
+                        <option value="area_externa">Área Externa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="localizacao">Localização</label>
+                    <input type="text" id="localizacao" name="localizacao" 
+                           class="form-input" placeholder="Ex: Sala 2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="numero-serie">Número de Série</label>
+                    <input type="text" id="numero-serie" name="numero-serie" 
+                           class="form-input" placeholder="Ex: AS1234-XYZ" required>
+                </div>
+
+                <button type="submit" class="btn-add">Adicionar Aparelho</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/adicionar.js"></script>
+</body>
+</html>

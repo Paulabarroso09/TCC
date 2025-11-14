@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AirSmart - Aparelhos</title>
+  <link rel="stylesheet" href="css/aparelhos.css">
+</head>
+<body>
+  <header class="header">
+    <h1>AirSmart</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="aparelhos.html" class="active">Aparelhos</a>
+     
+    </nav>
+    <a href="minha_conta.html"> <img class="imgPerfil" src="imgs/perfil.png" alt=""> </a>
+  </header>
+
+  <main>
+    <section class="aparelhos-section">
+      <h2>Meus Aparelhos</h2>
+
+      <div class="aparelhos-list">
+        <!-- ✅ OS APARELHOS SERÃO CARREGADOS DINAMICAMENTE AQUI -->
+      </div>
+
+      <!-- Bloco de Detalhes (inicialmente oculto) -->
+      <div id="detalhes-aparelho" class="detalhes-container" style="display: none;">
+        <div class="detalhes-header">
+          <h3 id="detalhes-nome">Detalhes do Aparelho</h3>
+          <button class="fechar-detalhes" onclick="fecharDetalhes()">×</button>
+        </div>
+        
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Informações do Aparelho</h3>
+            <div class="info-item">
+              <label>Modelo:</label>
+              <span id="info-modelo">-</span>
+            </div>
+            <div class="info-item">
+              <label>Localização:</label>
+              <span id="info-localizacao">-</span>
+            </div>
+            <div class="info-item">
+              <label>Número do Aparelho:</label>
+              <span id="info-serial">-</span>
+            </div>
+            <div class="info-item">
+              <label>Tipo:</label>
+              <span id="info-tipo">-</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Status da Qualidade do Ar</h3>
+            <div class="qualidade-ar">
+              <div class="indicador" id="indicador-qualidade">
+                <div class="circulo" id="circulo-qualidade"></div>
+                <span id="texto-qualidade">-</span>
+              </div>
+              <div class="dados-ar">
+                <div class="dado-item">
+                  <span class="label">Temperatura:</span>
+                  <span class="valor" id="temperatura">-</span>
+                </div>
+                <div class="dado-item">
+                  <span class="label">CO₂:</span>
+                  <span class="valor" id="co2">-</span>
+                </div>
+                <div class="dado-item">
+                  <span class="label">Umidade:</span>
+                  <span class="valor" id="umidade">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="manutencao-section">
+          <h3>Registro de Manutenção e Limpeza</h3>
+          
+          <form id="form-manutencao" class="manutencao-form">
+            <div class="form-group">
+              <label for="ultima-manutencao">Última Manutenção:</label>
+              <input type="date" id="ultima-manutencao" name="ultima-manutencao">
+            </div>
+
+            <div class="form-group">
+              <label for="proxima-manutencao">Próxima Manutenção:</label>
+              <input type="date" id="proxima-manutencao" name="proxima-manutencao">
+            </div>
+
+            <div class="form-group">
+              <label for="ultima-limpeza">Última Limpeza:</label>
+              <input type="date" id="ultima-limpeza" name="ultima-limpeza">
+            </div>
+
+            <div class="form-group">
+              <label for="tipo-manutencao">Tipo de Manutenção:</label>
+              <select id="tipo-manutencao" name="tipo-manutencao">
+                <option value="">Selecione...</option>
+                <option value="preventiva">Preventiva</option>
+                <option value="corretiva">Corretiva</option>
+                <option value="limpeza">Limpeza Geral</option>
+                <option value="filtro">Troca de Filtro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="observacoes">Observações:</label>
+              <textarea id="observacoes" name="observacoes" placeholder="Descreva detalhes da manutenção ou problemas identificados..." rows="4"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-salvar">Salvar Registro</button>
+              <button type="button" class="btn-limpar" onclick="limparFormulario()">Limpar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="historico-section">
+          <h3>Histórico de Manutenções</h3>
+          <div class="historico-list" id="lista-historico">
+            <p class="sem-historico">Nenhum registro de manutenção encontrado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="add-aparelho-container">
+        <button class="add-aparelho-btn" onclick="window.location.href='adicionar.html'">
+          <span>+</span> Adicionar Aparelho
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-copyright">
+      &copy; 2023 AirSmart. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- ✅ ADICIONADO: api.js para conectar com a API -->
+  <script src="js/api.js"></script>
+  <script src="js/aparelhos.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+/* ===== Cabeçalho Moderno ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 60px;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #007bff, #00a8ff);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Logo ===== */
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== Navegação ===== */
+.header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Hover e efeito de linha animada */
+.header nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.header nav a:hover::after,
+.header nav a.active::after {
+  width: 100%;
+}
+
+.header nav a:hover {
+  color: #e3f7ff;
+  transform: translateY(-2px);
+}
+
+/* ===== Ícone de Perfil ===== */
+.imgPerfil {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.imgPerfil:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Container do Formulário ===== */
+.add-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 480px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.add-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #00a8ff);
+}
+
+.add-card h2 {
+  margin-bottom: 35px;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== Formulário Moderno ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-input {
+  padding: 16px 20px;
+  border: 2px solid #e8ecef;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c3e50;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.form-input::placeholder {
+  color: #a0a4a8;
+  font-weight: 400;
+}
+
+/* ===== Select Personalizado ===== */
+.form-select {
+  padding: 16px 20px;
+  border: 2px solid #e8ecef;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%232c3e50' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") no-repeat right 20px center;
+  background-size: 12px;
+  appearance: none;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c3e50;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ===== Botão Moderno ===== */
+.btn-add {
+  margin-top: 25px;
+  padding: 18px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  color: white;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.btn-add:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 123, 255, 0.4);
+}
+
+.btn-add:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* ===== Ícone Voltar ===== */
+.imagemVoltar {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.imagemVoltar:hover {
+  transform: scale(1.1) translateX(-2px);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px 30px;
+  }
+
+  .header nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+  }
+
+  .add-card {
+      padding: 35px 25px;
+      margin: 20px;
+  }
+
+  .add-card h2 {
+      font-size: 1.7rem;
+  }
+
+  .form-input,
+  .form-select {
+      padding: 14px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-card {
+      padding: 30px 20px;
+  }
+
+  .add-card h2 {
+      font-size: 1.5rem;
+  }
+
+  .btn-add {
+      padding: 16px;
+      font-size: 16px;
+  }
+}
+
+/* ===== Efeitos de Foco Acessíveis ===== */
+.form-input:focus-visible,
+.form-select:focus-visible,
+.btn-add:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* ===== Animação de Entrada Suave ===== */
+@keyframes slideUpFade {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.add-card {
+  animation: slideUpFade 0.6s ease-out;
+}

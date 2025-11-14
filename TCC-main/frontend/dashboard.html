@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AirSmart - Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">AirSmart</div>
+    <nav class="nav">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="aparelhos.html">Aparelhos</a>
+    </nav>
+    <a href="minha_conta.html">
+      <img class="imgPerfil" src="imgs/perfil.png" alt="Perfil" />
+    </a>
+  </header>
+
+  </header>
+
+  <main class="container">
+    <!-- ===== Resumo ===== -->
+    <section class="resumo">
+      <h2>Resumo do Dia</h2>
+      <div class="cards">
+        <div class="card"><h3>🌡️ Temperatura</h3><p id="temp">26°C</p></div>
+        <div class="card"><h3>💧 Umidade</h3><p id="umid">60%</p></div>
+        <div class="card"><h3>☁️ Nível de CO₂</h3><p id="co2">150 ppm</p></div>
+      </div>
+
+      <!-- ✅ ADICIONADO: Elemento para última atualização -->
+      <p id="ultimaAtualizacao" style="text-align: center; color: #666; font-size: 14px; margin-top: 10px;">
+        Última atualização: --
+      </p>
+
+      <!-- ALERTA DINÂMICO -->
+      <div class="alerta" id="alerta" style="display:none;">
+        ⚠️ <strong>Atenção!</strong> Nível de CO₂ elevado! Verifique a ventilação do ambiente.
+      </div>
+    </section>
+
+    <!-- ===== Histórico ===== -->
+    <section class="historico">
+      <h2>Histórico de Qualidade do Ar</h2>
+      <div class="botoes-historico">
+        <button class="btn-periodo ativo" id="btn-hoje">Hoje</button>
+        <button class="btn-periodo" id="btn-semana">Semana</button>
+        <button class="btn-periodo" id="btn-mes">Mês</button>
+      </div>
+    
+      <!-- Área onde o relatório aparece -->
+      <div id="relatorio" class="relatorio">
+        <p>Selecione um período para visualizar o relatório.</p>
+      </div>
+
+      <!-- ===== Gráfico de Tendência DENTRO do histórico ===== -->
+      <div class="grafico-tendencia-container">
+        <div class="card grafico-card">
+          <h3>Tendência das Medições</h3>
+          <canvas id="tendenciaChart"></canvas>
+        </div>
+      </div>
+    </section>
+    
+    <div class="indices-semana">
+      <p><strong>Pior índice da semana:</strong> 156 <span>(Segunda-feira)</span></p>
+      <p><strong>Melhor índice da semana:</strong> 42 <span>(Sábado)</span></p>
+    </div>
+    
+    <div class="card tabela-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Data</th>
+            <th>Índice</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Seg</td><td>15/01</td><td>156</td><td class="status ruim">Ruim</td></tr>
+          <tr><td>Ter</td><td>16/01</td><td>89</td><td class="status moderado">Moderado</td></tr>
+          <tr><td>Qua</td><td>17/01</td><td>76</td><td class="status moderado">Moderado</td></tr>
+          <tr><td>Qui</td><td>18/01</td><td>65</td><td class="status bom">Bom</td></tr>
+          <tr><td>Sex</td><td>19/01</td><td>58</td><td class="status bom">Bom</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AirSmart - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

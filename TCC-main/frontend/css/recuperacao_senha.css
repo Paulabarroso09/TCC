@@ -1,0 +1,163 @@
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Fundo principal */
+  body {
+    background: linear-gradient(135deg, #DFF6FF, #A5D8FF);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Cabeçalho igual ao login e cadastro */
+  .header {
+    width: 100%;
+    background: #E3F2FD;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo img {
+    width: 38px;
+    height: auto;
+  }
+  
+  .logo h1 {
+    color: #007BFF;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  
+  .qr-icon img {
+    width: 35px;
+    height: auto;
+  }
+  
+  /* Container principal */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  /* Card central */
+  .card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Títulos e texto */
+  .card h2 {
+    color: #007BFF;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.8rem;
+  }
+  
+  /* Inputs */
+  .input-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+  
+  .input-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+  
+  .input-group input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+  }
+  
+  /* Botão */
+  .btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(90deg, #007BFF, #00B4D8);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Link voltar ao login */
+  .login-text {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1.2rem;
+    color: #555;
+  }
+  
+  .login-text a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .login-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .card {
+      max-width: 90%;
+      padding: 2rem 1.5rem;
+    }
+  
+    .logo h1 {
+      font-size: 1.1rem;
+    }
+  }
+  

@@ -1,0 +1,351 @@
+:root {
+  --bg: #f2f6fb;
+  --text: #2c3e50;
+  --card-bg: #ffffff;
+  --primary: #007bff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #141422;
+  --text: #e5e5e5;
+  --card-bg: #222233;
+  --primary: #00aaff;
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* ===== Cabeçalho Moderno ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 60px;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #007bff, #00a8ff);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.imgPerfil {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* ===== Navegação ===== */
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* ===== Hover animado ===== */
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: #e3f7ff;
+  transform: translateY(-2px);
+}
+
+/* ===== Ícone de Perfil ===== */
+.imgPerfil {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.imgPerfil:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Efeito ao rolar ===== */
+.header.scrolled {
+  background: rgba(0, 123, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 30px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* ===== Cards ===== */
+.container {
+  padding: 40px 60px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cards {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 6px 18px var(--shadow);
+  text-align: center;
+  padding: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px var(--shadow);
+}
+
+.card p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.alerta {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 12px 20px;
+  border-left: 6px solid #ff6600;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(255, 165, 0, 0.3);
+}
+
+/* ---------- HISTÓRICO ---------- */
+.historico {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.botoes-historico {
+  margin: 15px 0;
+}
+
+.btn-periodo {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  margin: 0 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.btn-periodo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.btn-periodo.ativo {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+.relatorio {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 10px auto;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  width: 90%;
+  max-width: 950px;
+  transition: all 0.3s ease;
+}
+
+.grafico-card h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--title-color);
+}
+
+.grafico-card h3 span {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--subtext-color);
+}
+
+.legenda {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.legenda div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.cor {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.cor.bom { background: #4caf50; }
+.cor.moderado { background: #ffc107; }
+.cor.ruim { background: #ff9800; }
+.cor.perigoso { background: #f44336; }
+
+.indices-semana {
+  margin: 1.2rem 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.indices-semana strong {
+  color: #004aad;
+}
+
+.tabela-card table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.tabela-card th {
+  background: linear-gradient(135deg, #2196f3, #007bff);
+  color: white;
+  padding: 0.75rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.tabela-card td {
+  padding: 0.7rem;
+  border-bottom: 1px solid var(--table-border);
+}
+
+.status {
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: white;
+}
+
+.status.bom { background: #4caf50; }
+.status.moderado { background: #ffc107; color: #333; }
+.status.ruim { background: #ff9800; }
+.status.perigoso { background: #f44336; }
+
+/* ---------- MODO CLARO ---------- */
+:root {
+  --bg-color: #f5f9ff;
+  --card-bg: #ffffff;
+  --text-color: #1a1a1a;
+  --title-color: #004aad;
+  --subtext-color: #555;
+  --table-border: #eee;
+}
+
+/* ---------- MODO ESCURO ---------- */
+body.dark {
+  --bg-color: #0d1117;
+  --card-bg: #161b22;
+  --text-color: #e6edf3;
+  --title-color: #58a6ff;
+  --subtext-color: #9ba1a6;
+  --table-border: #30363d;
+}
+
+body.dark .filtro {
+  background: linear-gradient(135deg, #0056d6, #0091ff);
+}
+
+body.dark .card {
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.05);
+}
+
+
+/* ===== Rodapé ===== */
+.footer {
+  text-align: center;
+  background: var(--primary);
+  color: white;
+  padding: 18px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+.imgPerfil{
+  width: 30px;
+  height: 30px;
+}
